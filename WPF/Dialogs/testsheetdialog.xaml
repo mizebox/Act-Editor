@@ -1,0 +1,9 @@
+<styles:TkWindow x:Class="ActEditor.Core.WPF.Dialogs.TestSheetDialog"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:styles="clr-namespace:TokeiLibrary.WPF.Styles;assembly=TokeiLibrary"
+                 Title="TestSheetDialog" Height="300" Width="300">
+  <Grid>
+    <ListView Name="_listview"/>
+  </Grid>
+</styles:TkWindow>
