@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\Act Editor\Act Editor.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC183040-63CB-4D4B-A187-C0BDAE2D0A9C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Act Editor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.10.574</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>ActEditor</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActImaging">
+      <HintPath>lib\ActImaging.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorPicker">
+      <HintPath>lib\ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="ErrorManager">
+      <HintPath>lib\ErrorManager.dll</HintPath>
+    </Reference>
+    <Reference Include="GRF">
+      <HintPath>lib\GRF.dll</HintPath>
+    </Reference>
+    <Reference Include="GrfToWpfBridge">
+      <HintPath>lib\GrfToWpfBridge.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>lib\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="PaletteEditor">
+      <HintPath>lib\PaletteEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="TokeiLibrary">
+      <HintPath>lib\TokeiLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilities">
+      <HintPath>lib\Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper.cs" />
+    <Compile Include="GRFEditorMain.cs" />
+    <Compile Include="Core\ISelector.cs" />
+    <Compile Include="Core\IPreview.cs" />
+    <Compile Include="Core\BufferedBrushes.cs" />
+    <Compile Include="Core\IPreviewEditor.cs" />
+    <Compile Include="Core\IActIndexSelector.cs" />
+    <Compile Include="Core\SpriteManager.cs" />
+    <Compile Include="Core\SpriteEditMode.cs" />
+    <Compile Include="Core\ZMode.cs" />
+    <Compile Include="Core\LazyAction.cs" />
+    <Compile Include="Core\ScriptLoader.cs" />
+    <Compile Include="Core\SoundEffect.cs" />
+    <Compile Include="Core\SelectionEngine.cs" />
+    <Compile Include="Core\WPF\Dialogs\ActEditorSettings.cs" />
+    <Compile Include="Core\WPF\EditorControls\IEditorInteractionEngine.cs" />
+    <Compile Include="Core\WPF\EditorControls\DefaultInteractionEngine.cs" />
+    <Compile Include="Core\WPF\EditorControls\LayerControlProvider.cs" />
+    <Compile Include="Core\WPF\EditorControls\EditableFrameViewer.cs" />
+    <Compile Include="Core\WPF\EditorControls\FixAnchorsFrameViewer.cs" />
+    <Compile Include="Core\WPF\EditorControls\FrameViewerSettings.cs" />
+    <Compile Include="Core\WPF\EditorControls\EditableFrameViewerSettings.cs" />
+    <Compile Include="Core\WPF\EditorControls\ActReference.cs" />
+    <Compile Include="Core\WPF\EditorControls\HeadInteractionEngine.cs" />
+    <Compile Include="Core\WPF\GenericControls\DummyStringView.cs" />
+    <Compile Include="Core\WPF\GenericControls\QuickTextPreviewAdorner.cs" />
+    <Compile Include="Core\WPF\GenericControls\LeftComboBox.cs" />
+    <Compile Include="Core\WPF\GenericControls\ClickSelectTextBox.cs" />
+    <Compile Include="Core\Scripts\ActionCopy.cs" />
+    <Compile Include="Core\Scripts\ActionPaste.cs" />
+    <Compile Include="Core\Scripts\ActionDelete.cs" />
+    <Compile Include="Core\Scripts\ActionInsertAt.cs" />
+    <Compile Include="Core\Scripts\ActionSwitchSelected.cs" />
+    <Compile Include="Core\Scripts\ActionCopyAt.cs" />
+    <Compile Include="Core\Scripts\ActionAdvanced.cs" />
+    <Compile Include="Core\Scripts\ActionCopyMirror.cs" />
+    <Compile Include="Core\Scripts\ActionLayerMove.cs" />
+    <Compile Include="Core\Scripts\FrameCopyBBr.cs" />
+    <Compile Include="Core\Scripts\FrameCopyBrB.cs" />
+    <Compile Include="Core\Scripts\FrameCopyBlB.cs" />
+    <Compile Include="Core\Scripts\FrameCopyBBl.cs" />
+    <Compile Include="Core\Scripts\FrameCopyHead.cs" />
+    <Compile Include="Core\Scripts\ReverseAnimation.cs" />
+    <Compile Include="Core\Scripts\FadeAnimation.cs" />
+    <Compile Include="Core\Scripts\AnimationReceivingHit.cs" />
+    <Compile Include="Core\Scripts\InterpolationAnimation.cs" />
+    <Compile Include="Core\Scripts\LayerInterpolationAnimation.cs" />
+    <Compile Include="Core\Scripts\InterpolationAnimationAdv.cs" />
+    <Compile Include="Core\Scripts\EditSelectAll.cs" />
+    <Compile Include="Core\Scripts\EditDeselectAll.cs" />
+    <Compile Include="Core\Scripts\InvertSelection.cs" />
+    <Compile Include="Core\Scripts\BringToFront.cs" />
+    <Compile Include="Core\Scripts\BringToBack.cs" />
+    <Compile Include="Core\Scripts\EditSound.cs" />
+    <Compile Include="Core\Scripts\EditPalette.cs" />
+    <Compile Include="Core\Scripts\EditPaletteAdvanced.cs" />
+    <Compile Include="Core\Scripts\ImportPaletteFrom.cs" />
+    <Compile Include="Core\Scripts\EditBackground.cs" />
+    <Compile Include="Core\Scripts\EditClearPalette.cs" />
+    <Compile Include="Core\Scripts\SpriteExport.cs" />
+    <Compile Include="Core\Scripts\ScriptRunnerMenu.cs" />
+    <Compile Include="Core\Scripts\OpenScriptsFolder.cs" />
+    <Compile Include="Core\Scripts\ReloadScripts.cs" />
+    <Compile Include="Core\Scripts\FrameDelete.cs" />
+    <Compile Include="Core\Scripts\FrameInsertAt.cs" />
+    <Compile Include="Core\Scripts\FrameSwitchSelected.cs" />
+    <Compile Include="Core\Scripts\FrameCopyAt.cs" />
+    <Compile Include="Core\Scripts\FrameAdvanced.cs" />
+    <Compile Include="Core\Scripts\FrameDuplicate.cs" />
+    <Compile Include="Core\Scripts\FrameHelper.cs" />
+    <Compile Include="Core\Scripts\EditAnchor.cs" />
+    <Compile Include="Core\Scripts\ImportAnchor.cs" />
+    <Compile Include="Core\Scripts\ImportDefaultMaleAnchor.cs" />
+    <Compile Include="Core\Scripts\ImportDefaultFemaleAnchor.cs" />
+    <Compile Include="Core\Scripts\AdjustAnchor.cs" />
+    <Compile Include="Core\Scripts\AdjustAnchorMale.cs" />
+    <Compile Include="Core\Scripts\AdjustAnchorFemale.cs" />
+    <Compile Include="Core\Avalon\AvalonLoader.cs" />
+    <Compile Include="Core\Avalon\AvalonDefaultLoading.cs" />
+    <Compile Include="Core\Avalon\RegexSearchStrategy.cs" />
+    <Compile Include="Core\DrawingComponents\DrawingComponent.cs" />
+    <Compile Include="Core\DrawingComponents\GridLine.cs" />
+    <Compile Include="Core\DrawingComponents\LayerDraw.cs" />
+    <Compile Include="Core\DrawingComponents\AnchorDraw.cs" />
+    <Compile Include="Core\DrawingComponents\SelectionDraw.cs" />
+    <Compile Include="Core\DrawingComponents\ImageDraw.cs" />
+    <Compile Include="Core\DrawingComponents\DrawingEngine.cs" />
+    <Compile Include="Core\DrawingComponents\ActDraw.cs" />
+    <Compile Include="ApplicationConfiguration\PathRequest.cs" />
+    <Compile Include="ApplicationConfiguration\GrfEditorConfiguration.cs" />
+    <Compile Include="ApplicationConfiguration\SelfPatcher.cs" />
+    <Compile Include="ApplicationConfiguration\SelfPatch.cs" />
+    <Compile Include="ApplicationConfiguration\RefreshScripts.cs" />
+    <Compile Include="ApplicationConfiguration\GrfEditorIconProvider.cs" />
+    <Compile Include="Tools\PaletteEditorTool\SpriteViewer.cs" />
+    <Compile Include="Tools\PaletteEditorTool\ImageModifiedCommand.cs" />
+    <Compile Include="Tools\PaletteEditorTool\SpriteModifiedCommand.cs" />
+    <Compile Include="Tools\PaletteEditorTool\CursorHelper.cs" />
+    <Compile Include="Tools\GrfShellExplorer\SelectMode.cs" />
+    <Compile Include="Tools\GrfShellExplorer\PreviewTabs\FilePreviewTab.cs" />
+    <Compile Include="Core\WPF\EditorControlsLayerEditor.xaml.cs">
+      <DependentUpon>editorcontrolslayereditor.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\PaletteEditorToolImageViewer.xaml.cs">
+      <DependentUpon>paletteeditortoolimageviewer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsTestSheetDialog.xaml.cs">
+      <DependentUpon>dialogstestsheetdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsReadonlyPlaySelector.xaml.cs">
+      <DependentUpon>editorcontrolsreadonlyplayselector.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\GrfShellExplorerGrfExplorer.xaml.cs">
+      <DependentUpon>grfshellexplorergrfexplorer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\GrfShellExplorer\PreviewTabsPreviewAct.xaml.cs">
+      <DependentUpon>previewtabspreviewact.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsSplashWindow.xaml.cs">
+      <DependentUpon>dialogssplashwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\PaletteEditorToolPaletteEditorWindow.xaml.cs">
+      <DependentUpon>paletteeditortoolpaletteeditorwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsReadonlyFramePreview.xaml.cs">
+      <DependentUpon>dialogsreadonlyframepreview.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\AvalonSearchPanel.xaml.cs">
+      <DependentUpon>avalonsearchpanel.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\GenericControlsLinkControl.xaml.cs">
+      <DependentUpon>genericcontrolslinkcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsInterpolateDialog.xaml.cs">
+      <DependentUpon>dialogsinterpolatedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsGifSavingDialog.xaml.cs">
+      <DependentUpon>dialogsgifsavingdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CoreActEditorWindow.xaml.cs">
+      <DependentUpon>coreacteditorwindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsCompactActIndexSelector.xaml.cs">
+      <DependentUpon>editorcontrolscompactactindexselector.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsFramePreview.xaml.cs">
+      <DependentUpon>editorcontrolsframepreview.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\PaletteEditorToolSpriteEditorControl.xaml.cs">
+      <DependentUpon>paletteeditortoolspriteeditorcontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\GenericControlsQuickColorSelector.xaml.cs">
+      <DependentUpon>genericcontrolsquickcolorselector.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsActIndexSelector.xaml.cs">
+      <DependentUpon>editorcontrolsactindexselector.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsActionInsertDialog.xaml.cs">
+      <DependentUpon>dialogsactioninsertdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsReferenceControl.xaml.cs">
+      <DependentUpon>editorcontrolsreferencecontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsHeadEditorDialog.xaml.cs">
+      <DependentUpon>dialogsheadeditordialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsSoundEditDialog.xaml.cs">
+      <DependentUpon>dialogssoundeditdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\GrfShellExplorer\PreviewTabsPreviewImage.xaml.cs">
+      <DependentUpon>previewtabspreviewimage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsFrameViewerAdvanced.xaml.cs">
+      <DependentUpon>editorcontrolsframevieweradvanced.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsScriptRunnerDialog.xaml.cs">
+      <DependentUpon>dialogsscriptrunnerdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsLayerControl.xaml.cs">
+      <DependentUpon>editorcontrolslayercontrol.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsSpriteConverterFormatDialog.xaml.cs">
+      <DependentUpon>dialogsspriteconverterformatdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsLayerControlHeader.xaml.cs">
+      <DependentUpon>editorcontrolslayercontrolheader.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsFrameInsertDialog.xaml.cs">
+      <DependentUpon>dialogsframeinsertdialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsFrameViewer.xaml.cs">
+      <DependentUpon>editorcontrolsframeviewer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\DialogsUsageDialog.xaml.cs">
+      <DependentUpon>dialogsusagedialog.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPFProgressWindow.xaml.cs">
+      <DependentUpon>wpfprogresswindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsSpriteSelector.xaml.cs">
+      <DependentUpon>editorcontrolsspriteselector.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsActionSelector.xaml.cs">
+      <DependentUpon>editorcontrolsactionselector.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>app.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\WPF\EditorControlsFrameSelector.xaml.cs">
+      <DependentUpon>editorcontrolsframeselector.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="resources\add.png" />
+    <Resource Include="resources\adjust.png" />
+    <Resource Include="resources\advanced.png" />
+    <Resource Include="resources\anchor.png" />
+    <Resource Include="resources\app.ico" />
+    <Resource Include="resources\arrow.png" />
+    <Resource Include="resources\arrowdown.png" />
+    <Resource Include="resources\arrowoblique.png" />
+    <Resource Include="resources\arrowup.png" />
+    <Resource Include="resources\back.png" />
+    <Resource Include="resources\background.png" />
+    <Resource Include="resources\backward.png" />
+    <Resource Include="resources\bbl.png" />
+    <Resource Include="resources\bbr.png" />
+    <Resource Include="resources\blb.png" />
+    <Resource Include="resources\brb.png" />
+    <Resource Include="resources\convert.png" />
+    <Resource Include="resources\copy.png" />
+    <Resource Include="resources\cut.png" />
+    <Resource Include="resources\delete.png" />
+    <Resource Include="resources\document.png" />
+    <Resource Include="resources\dos.png" />
+    <Resource Include="resources\dot.bmp" />
+    <Resource Include="resources\editor.png" />
+    <Resource Include="resources\empty.png" />
+    <Resource Include="resources\endarrow.bmp" />
+    <Resource Include="resources\error16.png" />
+    <Resource Include="resources\expand.png" />
+    <Resource Include="resources\export.png" />
+    <Resource Include="resources\fade.png" />
+    <Resource Include="resources\filter.png" />
+    <Resource Include="resources\find.png" />
+    <Resource Include="resources\flip.png" />
+    <Resource Include="resources\flip2.png" />
+    <Resource Include="resources\flipframe.png" />
+    <Resource Include="resources\folderclosed.png" />
+    <Resource Include="resources\forward.png" />
+    <Resource Include="resources\front.png" />
+    <Resource Include="resources\gpf-16.png" />
+    <Resource Include="resources\grf-16.png" />
+    <Resource Include="resources\help.png" />
+    <Resource Include="resources\ingame.png" />
+    <Resource Include="resources\internalapp.png" />
+    <Resource Include="resources\interpolate.png" />
+    <Resource Include="resources\keybackground.bmp" />
+    <Resource Include="resources\keytopheader.bmp" />
+    <Resource Include="resources\line.bmp" />
+    <Resource Include="resources\newfile.png" />
+    <Resource Include="resources\newfolder.png" />
+    <Resource Include="resources\pal.png" />
+    <Resource Include="resources\paste.png" />
+    <Resource Include="resources\pause.png" />
+    <Resource Include="resources\play.png" />
+    <Resource Include="resources\properties.png" />
+    <Resource Include="resources\redo.png" />
+    <Resource Include="resources\refresh.ico" />
+    <Resource Include="resources\refresh.png" />
+    <Resource Include="resources\rename.ico" />
+    <Resource Include="resources\replace.png" />
+    <Resource Include="resources\replaceall.png" />
+    <Resource Include="resources\replacesingle.png" />
+    <Resource Include="resources\reset.png" />
+    <Resource Include="resources\reverse.png" />
+    <Resource Include="resources\rgz-16.png" />
+    <Resource Include="resources\save.png" />
+    <Resource Include="resources\scale.png" />
+    <Resource Include="resources\search.png" />
+    <Resource Include="resources\settings.ico" />
+    <Resource Include="resources\settings.png" />
+    <Resource Include="resources\smallarrow.png" />
+    <Resource Include="resources\soundoff.png" />
+    <Resource Include="resources\soundon.png" />
+    <Resource Include="resources\splash.png" />
+    <Resource Include="resources\spritemaker.png" />
+    <Resource Include="resources\startarrow.bmp" />
+    <Resource Include="resources\stop.png" />
+    <Resource Include="resources\stop2.png" />
+    <Resource Include="resources\target.png" />
+    <Resource Include="resources\undo.png" />
+    <Resource Include="resources\validity.png" />
+    <Resource Include="resources\warning16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\act.ico" />
+    <EmbeddedResource Include="Resources\cs_brush.png" />
+    <EmbeddedResource Include="Resources\cs_bucket.png" />
+    <EmbeddedResource Include="Resources\cs_cross.png" />
+    <EmbeddedResource Include="Resources\cs_cursor.png" />
+    <EmbeddedResource Include="Resources\cs_eraser.png" />
+    <EmbeddedResource Include="Resources\cs_eyedrop.png" />
+    <EmbeddedResource Include="Resources\cs_pen.png" />
+    <EmbeddedResource Include="Resources\cs_stamp.png" />
+    <EmbeddedResource Include="Resources\female.png" />
+    <EmbeddedResource Include="Resources\homunculus.act" />
+    <EmbeddedResource Include="Resources\male.png" />
+    <EmbeddedResource Include="Resources\monster.act" />
+    <EmbeddedResource Include="Resources\NPC.act" />
+    <EmbeddedResource Include="Resources\ref_body_f.act" />
+    <EmbeddedResource Include="Resources\ref_body_f.spr" />
+    <EmbeddedResource Include="Resources\ref_body_m.act" />
+    <EmbeddedResource Include="Resources\ref_body_m.spr" />
+    <EmbeddedResource Include="Resources\ref_head_f.act" />
+    <EmbeddedResource Include="Resources\ref_head_f.spr" />
+    <EmbeddedResource Include="Resources\ref_head_m.act" />
+    <EmbeddedResource Include="Resources\ref_head_m.spr" />
+    <EmbeddedResource Include="Resources\ref_head_male.act" />
+    <EmbeddedResource Include="Resources\script_sample.cs" />
+    <EmbeddedResource Include="Resources\script_sample.dll" />
+    <EmbeddedResource Include="Resources\script0_magnify.cs" />
+    <EmbeddedResource Include="Resources\script0_magnify.dll" />
+    <EmbeddedResource Include="Resources\script0_magnifyAll.cs" />
+    <EmbeddedResource Include="Resources\script0_magnifyAll.dll" />
+    <EmbeddedResource Include="Resources\script1_replace_color.cs" />
+    <EmbeddedResource Include="Resources\script1_replace_color.dll" />
+    <EmbeddedResource Include="Resources\script1_replace_color_all.cs" />
+    <EmbeddedResource Include="Resources\script1_replace_color_all.dll" />
+    <EmbeddedResource Include="Resources\script2_expand.cs" />
+    <EmbeddedResource Include="Resources\script2_expand.dll" />
+    <EmbeddedResource Include="Resources\script3_mirror_frame.cs" />
+    <EmbeddedResource Include="Resources\script3_mirror_frame.dll" />
+    <EmbeddedResource Include="Resources\script4_generate_single_sprite.cs" />
+    <EmbeddedResource Include="Resources\script4_generate_single_sprite.dll" />
+    <EmbeddedResource Include="Resources\script5_remove_unused_sprites.cs" />
+    <EmbeddedResource Include="Resources\script5_remove_unused_sprites.dll" />
+    <EmbeddedResource Include="Resources\weapon.act" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="app.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\acteditorwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\avalon\searchpanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\acteditorsettingsdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\actioninsertdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\frameinsertdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\gifsavingdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\headeditordialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\interpolatedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\readonlyframepreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\scriptrunnerdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\soundeditdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\splashwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\spriteconverterformatdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\testsheetdialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\dialogs\usagedialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\actindexselector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\actionselector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\compactactindexselector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\framepreview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\frameselector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\frameviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\framevieweradvanced.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\layercontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\layercontrolheader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\layereditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\readonlyplayselector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\referencecontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\editorcontrols\spriteselector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\genericcontrols\linkcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\genericcontrols\quickcolorselector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="core\wpf\progresswindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="tools\grfshellexplorer\grfexplorer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="tools\grfshellexplorer\previewtabs\previewact.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="tools\grfshellexplorer\previewtabs\previewimage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="tools\paletteeditortool\imageviewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="tools\paletteeditortool\paletteeditorwindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="tools\paletteeditortool\spriteeditorcontrol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="wpf\styles\grfeditorstyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

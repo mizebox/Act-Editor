@@ -1,0 +1,9 @@
+<Window x:Class="ActEditor.Tools.PaletteEditorTool.PaletteEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:PaletteEditorTool="clr-namespace:ActEditor.Tools.PaletteEditorTool"
+        Icon="..\../Resources\pal.png" Title="Palette editor">
+  <Grid>
+    <PaletteEditorTool:SpriteEditorControl x:Name="_palEditor"/>
+  </Grid>
+</Window>
