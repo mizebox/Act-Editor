@@ -1,0 +1,71 @@
+<UserControl x:Class="ActEditor.Core.WPF.EditorControls.LayerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Core="clr-namespace:ActEditor.Core"
+             xmlns:WPF1="clr-namespace:ActEditor.Core.WPF"
+             xmlns:GenericControls="clr-namespace:ActEditor.Core.WPF.GenericControls"
+             VirtualizingStackPanel.IsVirtualizing="true">
+  <Grid Name="_grid" Background="White">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+      <ColumnDefinition MinWidth="43"/>
+    </Grid.ColumnDefinitions>
+    <TextBlock x:Name="_tbSpriteId" Padding="0 0 3 0" TextAlignment="Right" Grid.Column="0" Margin="0 0 1 1"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="0"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:ClickSelectTextBox x:Name="_tbSpriteNumber" TextAlignment="Right" Grid.Column="1" BorderThickness="0" Margin="0 0 1 1"
+                                        Background="Transparent"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="1"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:ClickSelectTextBox x:Name="_tbOffsetX" TextAlignment="Right" Grid.Column="2" BorderThickness="0" Margin="0 0 1 1"
+                                        Background="Transparent"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="2"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:ClickSelectTextBox x:Name="_tbOffsetY" TextAlignment="Right" Grid.Column="3" BorderThickness="0" Margin="0 0 1 1"
+                                        Background="Transparent"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="3"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:ClickSelectTextBox x:Name="_tbMirror" IsHitTestVisible="false" TextAlignment="Right" Grid.Column="4"
+                                        BorderThickness="0" Margin="0 0 1 1" Background="Transparent"/>
+    <CheckBox Name="_cbMirror" Grid.Column="4" Margin="0 0 1 1" HorizontalAlignment="Center"
+              VerticalAlignment="Center"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="4"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:QuickColorSelector x:Name="_color" Grid.Column="5" Margin="-3 -3 -2 -2"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="5"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:ClickSelectTextBox x:Name="_tbScaleX" TextAlignment="Right" Grid.Column="6" BorderThickness="0" Margin="0 0 1 1"
+                                        Background="Transparent"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="6"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:ClickSelectTextBox x:Name="_tbScaleY" TextAlignment="Right" Grid.Column="7" BorderThickness="0" Margin="0 0 1 1"
+                                        Background="Transparent"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="7"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <GenericControls:ClickSelectTextBox x:Name="_tbRotation" TextAlignment="Right" Grid.Column="8" BorderThickness="0" Margin="0 0 1 1"
+                                        Background="Transparent"/>
+    <Line HorizontalAlignment="Right" Width="1" Y2="1" Grid.Column="8"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    <Line Height="1" X1="0" X2="1" Grid.Column="0" VerticalAlignment="Bottom"
+          Stroke="{x:Static Core:ActEditorWindow.UIGridBackground}" Stretch="Fill"
+          StrokeStartLineCap="Square" StrokeEndLineCap="Square" Grid.ColumnSpan="10"/>
+  </Grid>
+</UserControl>

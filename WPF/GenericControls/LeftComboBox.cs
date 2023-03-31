@@ -1,0 +1,30 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: ActEditor.Core.WPF.GenericControls.LeftComboBox
+// Assembly: Act Editor, Version=1.0.10.574, Culture=neutral, PublicKeyToken=null
+// MVID: F959EA4D-9DCB-468F-99FC-E6CA4E863E84
+// Assembly location: C:\Program Files (x86)\Act Editor\Act Editor.exe
+
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+
+namespace ActEditor.Core.WPF.GenericControls
+{
+  public class LeftComboBox : ComboBox
+  {
+    public override void OnApplyTemplate()
+    {
+      base.OnApplyTemplate();
+      if (!(this.Template.FindName("PART_Popup", (FrameworkElement) this) is Popup name))
+        return;
+      name.Placement = PlacementMode.Custom;
+      name.CustomPopupPlacementCallback += (CustomPopupPlacementCallback) ((popupSize, targetSize, offset) => new CustomPopupPlacement[1]
+      {
+        new CustomPopupPlacement()
+        {
+          Point = new Point(targetSize.Width - popupSize.Width, targetSize.Height)
+        }
+      });
+    }
+  }
+}

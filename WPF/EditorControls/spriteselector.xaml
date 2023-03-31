@@ -1,0 +1,38 @@
+<UserControl x:Class="ActEditor.Core.WPF.EditorControls.SpriteSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Styles="clr-namespace:TokeiLibrary.WPF.Styles;assembly=TokeiLibrary"
+             Height="150" MinHeight="100">
+  <Grid Name="_gridBackground" FocusVisualStyle="{x:Null}">
+    <Panel.Background>
+      <VisualBrush TileMode="Tile" Viewport="0,0,0,0" ViewportUnits="RelativeToBoundingBox">
+        <VisualBrush.Visual>
+          <Grid>
+            <Image Source="../../../Resources/background.png" RenderOptions.BitmapScalingMode="NearestNeighbor"
+                   Width="256" Height="256"/>
+          </Grid>
+        </VisualBrush.Visual>
+      </VisualBrush>
+    </Panel.Background>
+    <Canvas>
+      <ScrollViewer Name="_sv" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled"
+                    FocusVisualStyle="{x:Null}"
+                    Height="{Binding Parent.ActualHeight, Mode=OneWay, RelativeSource={RelativeSource Self}}"
+                    Width="{Binding Parent.ActualWidth, Mode=OneWay, RelativeSource={RelativeSource Self}}">
+        <FrameworkElement.ContextMenu>
+          <ContextMenu>
+            <Styles:TkMenuItem Click="_miAdd_Click" x:Name="_miAdd" HeaderText="Add image..." IconPath="add.png"/>
+          </ContextMenu>
+        </FrameworkElement.ContextMenu>
+        <DockPanel Name="_dp" LastChildFill="false" FocusVisualStyle="{x:Null}">
+          <Rectangle Width="200"/>
+        </DockPanel>
+      </ScrollViewer>
+    </Canvas>
+    <Line Name="_lineMoveLayer" Margin="-2 0 0 0" Visibility="Hidden" Stretch="Fill"
+          HorizontalAlignment="Left" Y1="0" Y2="1" Stroke="Red" StrokeThickness="3" StrokeEndLineCap="Square"
+          StrokeStartLineCap="Square"/>
+  </Grid>
+</UserControl>
